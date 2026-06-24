@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#070707">
+    <meta name="description" content="Урок від Сараванського Андрія про старт у таргеті з нуля у 2026 році з допомогою AI-агентів.">
+    <title>Як стати таргетологом з нуля у 2026 році</title>
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="landing" aria-labelledby="page-title">
+        <header class="hero">
+          <p class="kicker">Урок від Сараванського Андрія</p>
+          <h1 id="page-title">Як стати <mark>таргетологом</mark> з нуля у 2026 році з допомогою AI-агентів та де шукати клієнтів?</h1>
+          <div class="tags" aria-label="Теми уроку">
+            <span>Таргетинг 2026</span>
+            <span>AI-агенти</span>
+            <span>Перші клієнти</span>
+          </div>
+        </header>
+
+        <section class="player-shell" aria-label="Відеоурок">
+          <div class="video-frame">
+            <video
+              id="localVideo"
+              preload="metadata"
+              playsinline
+              poster="https://i.ytimg.com/vi/ifgE0bvQkuQ/maxresdefault.jpg"
+              hidden
+            ></video>
+            <iframe
+              id="youtubeFrame"
+              title="Відеоурок від Сараванського Андрія"
+              src="https://www.youtube-nocookie.com/embed/ifgE0bvQkuQ?enablejsapi=1&playsinline=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+            <button class="play-cover" id="playCover" type="button" aria-label="Запустити відео">
+              <span class="play-ring">
+                <span class="play-triangle" aria-hidden="true"></span>
+              </span>
+              <span class="cover-copy">Дивитись урок</span>
+            </button>
+          </div>
+
+          <div class="custom-controls" aria-label="Керування відео">
+            <button class="control-button" id="rewindButton" type="button" aria-label="Назад на 10 секунд">
+              <span aria-hidden="true">−10</span>
+            </button>
+            <button class="control-button control-button--main" id="playButton" type="button" aria-label="Відтворити або поставити на паузу">
+              <span id="playButtonIcon" aria-hidden="true">▶</span>
+            </button>
+            <label class="speed-control" for="speedSelect">
+              <span>Швидкість</span>
+              <select id="speedSelect" aria-label="Швидкість відтворення">
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="progress-area" aria-label="Прогрес відео">
+            <div class="progress-track">
+              <input id="progressRange" type="range" min="0" max="1000" value="0" aria-label="Прогрес відео">
+              <span class="progress-fill" id="progressFill"></span>
+            </div>
+            <div class="time-row">
+              <span id="currentTime">0:00</span>
+              <span id="durationTime">0:00</span>
+            </div>
+          </div>
+        </section>
+
+        <button class="cta-button is-hidden" id="formTrigger" type="button">Заповнити анкету</button>
+
+        <section class="lead-form-panel" id="leadFormPanel" aria-labelledby="form-title" hidden>
+          <h2 id="form-title">Навчись таргету з 0 до перших клієнтів за допомогою AI</h2>
+          <form id="leadForm">
+            <label>
+              <span>Імʼя</span>
+              <input name="name" type="text" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Номер телефону</span>
+              <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </label>
+            <label>
+              <span>Телеграм нік</span>
+              <input name="telegram" type="text" placeholder="@username" pattern="^@.+$" required>
+            </label>
+            <label>
+              <span>Інстаграм нік</span>
+              <input name="instagram" type="text" placeholder="@username" pattern="^@.+$" required>
+            </label>
+            <button class="submit-button" type="submit">Відправити заявку</button>
+            <p class="form-note" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
