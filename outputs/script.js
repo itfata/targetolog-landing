@@ -1,5 +1,5 @@
-const CONFIG = {
-  ctaTimeSeconds: 30,
+﻿const CONFIG = {
+  ctaTimeSeconds: 1035,
   webhookUrl: "/api/lead",
   videoMode: "local",
   localVideoUrl: "./video.mp4"
@@ -56,7 +56,7 @@ window.onYouTubeIframeAPIReady = () => {
 
 window.setTimeout(() => {
   if (!useLocalVideo && !player) {
-    playCover.querySelector(".cover-copy").textContent = "Натисніть ще раз, якщо відео довго завантажується";
+    playCover.querySelector(".cover-copy").textContent = "ÐÐ°Ñ‚Ð¸ÑÐ½Ñ–Ñ‚ÑŒ Ñ‰Ðµ Ñ€Ð°Ð·, ÑÐºÑ‰Ð¾ Ð²Ñ–Ð´ÐµÐ¾ Ð´Ð¾Ð²Ð³Ð¾ Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶ÑƒÑ”Ñ‚ÑŒÑÑ";
   }
 }, 3500);
 
@@ -86,7 +86,7 @@ function initLocalVideo() {
 
   localVideo.addEventListener("error", () => {
     playCover.classList.remove("is-hidden");
-    playCover.querySelector(".cover-copy").textContent = "Покладіть файл video.mp4 у папку outputs";
+    playCover.querySelector(".cover-copy").textContent = "ÐŸÐ¾ÐºÐ»Ð°Ð´Ñ–Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» video.mp4 Ñƒ Ð¿Ð°Ð¿ÐºÑƒ outputs";
   });
 }
 
@@ -199,7 +199,7 @@ function playVideo() {
     playCover.classList.add("is-hidden");
     localVideo.play().catch(() => {
       playCover.classList.remove("is-hidden");
-      playCover.querySelector(".cover-copy").textContent = "Натисніть ще раз для запуску";
+      playCover.querySelector(".cover-copy").textContent = "ÐÐ°Ñ‚Ð¸ÑÐ½Ñ–Ñ‚ÑŒ Ñ‰Ðµ Ñ€Ð°Ð· Ð´Ð»Ñ Ð·Ð°Ð¿ÑƒÑÐºÑƒ";
     });
     return;
   }
@@ -329,7 +329,7 @@ if (previewForm) {
 
 leadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  formStatus.textContent = "Відправляємо заявку...";
+  formStatus.textContent = "Ð’Ñ–Ð´Ð¿Ñ€Ð°Ð²Ð»ÑÑ”Ð¼Ð¾ Ð·Ð°ÑÐ²ÐºÑƒ...";
 
   const formData = new FormData(leadForm);
   const payload = {
@@ -354,13 +354,14 @@ leadForm.addEventListener("submit", async (event) => {
     }
 
     leadForm.reset();
-    formStatus.textContent = "Дякуємо! Заявку прийнято.";
+    formStatus.textContent = "Ð”ÑÐºÑƒÑ”Ð¼Ð¾! Ð—Ð°ÑÐ²ÐºÑƒ Ð¿Ñ€Ð¸Ð¹Ð½ÑÑ‚Ð¾.";
   } catch (error) {
     if (error.message === "Telegram is not configured") {
-      formStatus.textContent = "Форма працює. Додайте TELEGRAM_BOT_TOKEN і TELEGRAM_CHAT_ID на Render, щоб заявки йшли в бот.";
+      formStatus.textContent = "Ð¤Ð¾Ñ€Ð¼Ð° Ð¿Ñ€Ð°Ñ†ÑŽÑ”. Ð”Ð¾Ð´Ð°Ð¹Ñ‚Ðµ TELEGRAM_BOT_TOKEN Ñ– TELEGRAM_CHAT_ID Ð½Ð° Render, Ñ‰Ð¾Ð± Ð·Ð°ÑÐ²ÐºÐ¸ Ð¹ÑˆÐ»Ð¸ Ð² Ð±Ð¾Ñ‚.";
       return;
     }
 
-    formStatus.textContent = "Не вдалося відправити. Перевірте дані або спробуйте ще раз.";
+    formStatus.textContent = "ÐÐµ Ð²Ð´Ð°Ð»Ð¾ÑÑ Ð²Ñ–Ð´Ð¿Ñ€Ð°Ð²Ð¸Ñ‚Ð¸. ÐŸÐµÑ€ÐµÐ²Ñ–Ñ€Ñ‚Ðµ Ð´Ð°Ð½Ñ– Ð°Ð±Ð¾ ÑÐ¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ñ‰Ðµ Ñ€Ð°Ð·.";
   }
 });
+
